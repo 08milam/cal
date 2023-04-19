@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    	body{
+background: linear-gradient(to right, slategray, gray);
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+#container{
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+#mainBox{
+width: 433px;
+height: 475px ;
+margin: 25px;
+padding-top: 10px;
+background-color: dimgray;
+border-radius: 5px;
+}
+
+#TFASC{
+	color: snow;
+}
+
+/*input filled for feed and speed*/
+
+#Calculator{
+width: 433px;
+height: 360px;
+margin-top: 25px;
+border-radius: 5px;
+background-color: whitesmoke;
+border-color: gray;
+}
+
+#surfaceFeetPerMinute{
+	width: 200px;
+	height: 45px;
+	border-radius: 5px;
+	border: none;
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: lightsteelblue;
+	margin: 5px;
+}
+
+#drillOrTapSize{
+	width: 200px;
+	height: 45px;
+	border-radius: 5px;
+	border: none;
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: lightsteelblue;
+	margin: 5px;
+}
+
+#numberOfTeeth{
+	width: 200px;
+	height: 45px;
+	border-radius: 5px;
+	border: none;
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: lightsteelblue;
+	margin: 5px;
+}
+
+#numberOfThreads{
+	width: 200px;
+	height: 45px;
+	border-radius: 5px;
+	border: none;
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: lightsteelblue;
+	margin: 5px;
+}
+
+#tableOfContent{
+	border-radius: 5px ;
+	align-items: center;
+	justify-content: center;
+	background-color: lightgray;
+	margin: 5px;
+}
+
+#toolNameDrill{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	border-top-left-radius: 5px;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#toolNameHSS{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#toolNameCarbide{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#toolNameHSM{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#toolNameHEM{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+	border-top-right-radius: 5px;
+}
+
+#toolSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#toolFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+	border-bottom-left-radius: 5px ;
+}
+
+/*table for tool feed and speed*/
+
+#feedSpeedCalculation{
+	width: 423px;
+	height: 35px;
+	margin: 5px;
+	background-color: slategray;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	color: snow;
+	border: snow;
+}
+
+#feedSpeedCalculation:hover{
+	width: 423px;
+	height: 35px;
+	margin: 5px;
+	background-color: rgb(66, 107, 147);
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	color: snow;
+	border: snow;
+}
+
+#feedSpeedCalculation:hover:active {
+	background-color: deepskyblue;
+	background-size: 100%;
+	transition: background 0.0s;
+  }
+
+#hssSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#hssFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#carbideSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#carbideFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#hsmSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#hsmFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#hemSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#hemFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+	border-bottom-right-radius:5px ;
+}
+
+/*table for standerd tap feeds and speeds*/
+
+#TapFeedSpeedtable{
+	float: right;
+}
+
+#standerdTapFeedandSpeedtable{
+	width: 207px;
+	height: 89px;
+	margin-right: 5px;
+	border-radius: 5px;
+	background-color: lightgray;
+}
+
+#standerdTapFeedSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+	border-top-right-radius: 5px ;
+	border-top-left-radius: 5px ;
+}
+
+#standerdTapSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#standerdTapSpeedanwser{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#standerdTapFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+	border-bottom-left-radius: 5px ;
+}
+
+#standerdTapFeedanwser{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+	border-bottom-right-radius: 5px;
+}
+
+/*table for metric tap feed and speed*/
+
+#metricTapFeedSpeedtable{
+	width: 207px;
+	height: 89px;
+	margin-left: 5px;
+	border-radius: 5px;
+	background-color: lightgray;
+}
+
+#metricTapFeedSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+	border-top-right-radius: 5px ;
+	border-top-left-radius: 5px ;
+}
+
+#metricTapSpeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+}
+
+#metricTapSpeedanwser{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+}
+
+#metricTapFeed{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 25px;
+	color: antiquewhite;
+	background-color: gray;
+	border-bottom-left-radius: 5px ;
+}
+
+#metricTapFeedanwser{
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: snow;
+	border-bottom-right-radius: 5px;
+}
+    </style>
+</head>
+<body>
+<!--input filled for feed and speed-->
+<div id="container">
+
+<div id="mainBox">
+
+	<div id="TFASC"><p>TOOL FEEDS AND SPEEDS CALCULATOR</p></div>
+
+		<div id="Calculator">
+			
+	<div>
+	<input type="text" id="surfaceFeetPerMinute" placeholder="Surface Ft/Min" maxlength="5"></imput>
+	<input type="text" id="drillOrTapSize" placeholder="Drill or Tap Size" maxlength="5"></imput>
+	</div>
+	
+	<div>
+	<input type="text" id="numberOfTeeth" placeholder="Number Of Flutes" maxlength="5"></imput>
+	<input type="text" id="numberOfThreads" placeholder="Number of Threads" maxlength="5"></imput>
+	
+
+	</div>
+
+	<div>
+		<button id="feedSpeedCalculation">SUBMIT VALUES</button>	
+	</div>
+<!--table for tool feed and speed-->
+	<div>
+		<Table id="tableOfContent">
+			<tr>
+				<td id="toolNameDrill">DRILL</td>
+				<td id="toolNameHSS">HSS</td>
+				<td id="toolNameCarbide">CARBIDE</td>
+				<td id="toolNameHSM">HSM</td>
+				<td id="toolNameHEM">HEM</td>
+			</tr>
+			<tr>
+				<td id="toolSpeed">SPEED</td>
+				<td id="hssSpeed"></td>
+				<td id="carbideSpeed"></td>
+				<td id="hsmSpeed"></td>
+				<td id="hemSpeed"></td>
+			</tr>
+			<tr>
+				<td id="toolFeed">FEED</td>
+				<td id="hssFeed"></td>
+				<td id="carbideFeed"></td>
+				<td id="hsmFeed"></td>
+				<td id="hemFeed"></td>
+			</tr>
+		</Table>
+	</div>
+<!--table for standerd and metric tap feeds and speeds-->
+
+<div id="TapFeedSpeedtable">
+
+<!--table for standerd tap feeds and speeds-->
+<div id="standerdTapFeedandSpeedtable">
+	<table>
+		<tr>
+		<td id="standerdTapFeedSpeed" colspan="2">STANDERD TAP</td>
+		</tr>
+		<tr>
+			<td id="standerdTapSpeed">SPEED</td>
+			<td id="standerdTapSpeedanwser"></td>
+		</tr>
+		<tr>
+			<td id="standerdTapFeed">FEED</td>
+			<td id="standerdTapFeedanwser"></td>
+		</tr>
+	</table>
+</div>
+<!--table for metric tap feed and speed-->
+</div>
+
+<div id="metricTapFeedSpeedtable">
+	<table>
+		<tr>
+		<td id="metricTapFeedSpeed" colspan="2">METRIC TAP</td>
+		</tr>
+		<tr>
+			<td id="metricTapSpeed">SPEED</td>
+			<td id="metricTapSpeedanwser"></td>
+		</tr>
+		<tr>
+			<td id="metricTapFeed">FEED</td>
+			<td id="metricTapFeedanwser"></td>
+		</tr>
+	</table>
+</div>
+		</div>
+		<div id="TFASC"><p>&copy; BEGWELL</p></div>
+</div>
+
+</div>
+</body>
+<footer>
+	<script>
+		
+
+
+//submit button//
+const fSCC = document.getElementById('feedSpeedCalculation');
+function totalOfAll(){
+
+//Standard parameters//
+const corenumbers = {
+	HSS:1,
+	Carbide:2.5,
+	HightspeedmachiningHSM:1.5,
+	Hightefficiencymilling:2.0,
+	percentoftool:0,
+	pie:3.14,
+	standerdNumber:12,
+	FeedPerTooth:0.0025,
+	sroundnum:1000,
+	froundnum:100
+}
+//data inputs//
+	const sFPM = document.getElementById('surfaceFeetPerMinute').value;
+	const dORS = document.getElementById('drillOrTapSize').value;
+	const nOTE = document.getElementById('numberOfTeeth').value;
+	const nOTH = document.getElementById('numberOfThreads').value;
+//HSS//
+	const hSSS = document.getElementById('hssSpeed');
+	const hSSF = document.getElementById('hssFeed');
+//carbide//
+	const cS = document.getElementById('carbideSpeed');
+	const cF = document.getElementById('carbideFeed');
+//HSM//
+	const hsmS = document.getElementById('hsmSpeed');
+	const hsmF = document.getElementById('hsmFeed');
+//HEM//
+	const hemS = document.getElementById('hemSpeed');
+	const hemF = document.getElementById('hemFeed');
+//Tap Feed Speed//
+	const sTSA = document.getElementById('standerdTapSpeedanwser');
+	const sTFA = document.getElementById('standerdTapFeedanwser');
+//Speed//
+//HSS//
+		let sumOfHssSpeed = (sFPM) * (corenumbers.standerdNumber);
+		let sumOfHssFeed = (dORS) * (corenumbers.pie);
+		let hssTotal = (sumOfHssSpeed / sumOfHssFeed);
+		let hSST = Math.round(hssTotal);
+	hSSS.append (hSST);
+//Carbide//
+	let sumOfCarbideSpeed = (hssTotal) * (corenumbers.Carbide);
+	let cST = Math.round(sumOfCarbideSpeed);
+		cS.append (cST);
+//HEM//
+	let sumOfHemSpeed = (hssTotal) * (corenumbers.Hightefficiencymilling);
+	let hemt = Math.round(sumOfHemSpeed);
+		hsmS.append (hemt);
+//HSM//
+	let sumOfHsmSpeed = (hssTotal) * (corenumbers.HightspeedmachiningHSM);
+	let hsmt = Math.round(sumOfHsmSpeed);
+		hemS.append (hsmt);
+
+//Feed//
+//HSS//
+		let feedOfHss = (nOTE) * (corenumbers.FeedPerTooth) * (hssTotal);
+		let hssF = (feedOfHss).toFixed(2);
+		hSSF.append (hssF);
+//Carbide//
+	let feedOfCarbide = (nOTE) * (corenumbers.FeedPerTooth) * (sumOfCarbideSpeed);
+	let carbideF = (feedOfCarbide).toFixed(2);
+	cF.append (carbideF);
+//HSM//
+	let hsMF = (nOTE) * (corenumbers.FeedPerTooth) * (sumOfHemSpeed);
+	let hsMFeed = (hsMF).toFixed(2);
+	hsmF.append(hsMFeed);
+//HEM//
+	let heMF = (nOTE) * (corenumbers.FeedPerTooth) * (sumOfHsmSpeed);
+	let heMFeed = (heMF).toFixed(2);
+	hemF.append(heMFeed);
+
+//Standerd tap//
+//Speed//
+let sumOfStanderdTap = (sFPM) / (corenumbers.FeedPerTooth) * (dORS) / (corenumbers.sroundnum);
+let SOST = (sumOfStanderdTap).toFixed(2);
+sTSA.append(SOST);
+//Feed//
+let sumOfStanderdTapf = (sFPM) / (corenumbers.FeedPerTooth) / (corenumbers.froundnum);
+let SOfT = (sumOfStanderdTapf).toFixed(2);
+sTFA.append(SOfT);
+//Metric tap//
+
+}
+fSCC.addEventListener('click', totalOfAll);
+
+		
+	</script>
+</footer>
+</html>
